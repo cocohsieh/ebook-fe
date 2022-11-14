@@ -1,8 +1,6 @@
-// import { useCart } from '../../../utils/useCart'
 import { useCart } from '../../utils/useCart'
 import { useNavigate } from 'react-router-dom'
 import { useNavigate2 } from 'react-router-dom'
-// import ProductList from '../../../pages/Product/ProductList'
 import ProductList from '../../Product/ProductList'
 import Form from 'react-bootstrap/Form'
 
@@ -17,7 +15,7 @@ function Pay({ tab, handleStep }) {
   const handleClick = (path) => () => {
     navigate(path)
   }
-  console.log(items);
+  console.log(items)
   return (
     <>
       <div>
@@ -30,63 +28,27 @@ function Pay({ tab, handleStep }) {
         >
           <thead>
             <tr className="SingleCart-topnav">
-              <th style={{ width: 200 }}
-              className="SingleCart-tr"
-              >商品明細</th>
+              <th style={{ width: 200 }} className="SingleCart-tr">
+                商品明細
+              </th>
               <th></th>
-              {/* <th>單價</th> */}
-              {/* <th>數量</th> */}
               <th className="SingleCart-tr2">小計</th>
-              {/* <th>移除</th> */}
             </tr>
           </thead>
           <tbody>
             {items.map((v, i) => {
               return (
                 <tr key={v.id}>
-                <td>
-                  <img
-                    style={{ width: 120, height: 160 }}
-                    src={v.book_img}
-                    className="card-img-top ProductList-card-img-top"
-                    alt="..."
-                  />
-                </td>
+                  <td>
+                    <img
+                      style={{ width: 120, height: 160 }}
+                      src={v.book_img}
+                      className="card-img-top ProductList-card-img-top"
+                      alt="..."
+                    />
+                  </td>
                   <td>{v.book_name} </td>
                   <td>${v.price}</td>
-                  {/* 設定tab是購物車還是收藏 */}
-                  {/* <td>
-                  <button
-                    type="button"
-                    className="btn btn-light"
-                    onClick={() => {
-                      removeItem(v.id)
-                    }}
-                  >
-                    移除
-                  </button>
-                  {tab === 'cart' ? (
-                    <button
-                      type="button"
-                      className="btn btn-light"
-                      onClick={() => {
-                        removeItem(v.id)
-                      }}
-                    >
-                      移入收藏
-                    </button>
-                  ) : (
-                    <button
-                      type="button"
-                      className="btn btn-light"
-                      onClick={() => {
-                        removeItem(v.id)
-                      }}
-                    >
-                      移入購物車
-                    </button>
-                  )}
-                </td> */}
                 </tr>
               )
             })}
@@ -95,7 +57,9 @@ function Pay({ tab, handleStep }) {
 
         <div>
           <div className="my-5">
-            <div className="SingleCart-topnav py-2 ps-2 SingleCart-tr3">訂單資訊 </div>
+            <div className="SingleCart-topnav py-2 ps-2 SingleCart-tr3">
+              訂單資訊{' '}
+            </div>
             <br />
             共有&nbsp;
             <span className="ListItemsWithHook-text-em-color">
@@ -109,12 +73,14 @@ function Pay({ tab, handleStep }) {
             </span>
             <br />
             {cart.isEmpty && '購物車為空'}
-            {/* <hr /> */}
           </div>
         </div>
 
         <div>
-          <div className="SingleCart-topnav py-2 ps-2 SingleCart-tr3"> 付款方式：信用卡</div>
+          <div className="SingleCart-topnav py-2 ps-2 SingleCart-tr3">
+            {' '}
+            付款方式：信用卡
+          </div>
           <br />
           <div className="d-flex Pay-text-style">
             <Form.Label htmlFor=" ">信用卡號：</Form.Label>
@@ -205,14 +171,7 @@ function Pay({ tab, handleStep }) {
         </div>
 
         <div className="d-flex justify-content-end">
-          {/* <button
-            type="button"
-            className="btn co-btn"
-            // onClick={handleStep(3)}
-          >
-            確定付款
-          </button> */}
-          <Popup items={items}/>
+          <Popup items={items} />
         </div>
       </div>
     </>

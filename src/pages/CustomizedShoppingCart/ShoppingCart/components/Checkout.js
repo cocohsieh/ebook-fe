@@ -1,10 +1,8 @@
-// import { useCart } from '../../utils/useCart'
 import { useCart } from '../../../CustomizedShoppingCart/utils/useCart'
 import { useNavigate } from 'react-router-dom'
-import { useNavigate2 } from 'react-router-dom'
-// import ProductList from 'pages/Product/ProductList'
-import ProductList from '../../Product/ProductList'
-import CouponModal from '../components/CouponModal'
+// import { useNavigate2 } from 'react-router-dom'
+// import ProductList from '../../Product/ProductList'
+// import CouponModal from '../components/CouponModal'
 import { useState } from 'react'
 
 function ListItemsWithHook({ tab, handleStep, couponAmount0 }) {
@@ -31,14 +29,11 @@ function ListItemsWithHook({ tab, handleStep, couponAmount0 }) {
       >
         <thead className="SingleCart-topnav">
           <tr>
-            <th style={{ width: 200 }}
-            className="SingleCart-tr"
-            >商品明細</th>
+            <th style={{ width: 200 }} className="SingleCart-tr">
+              商品明細
+            </th>
             <th></th>
-            {/* <th>單價</th> */}
-            {/* <th>數量</th> */}
             <th className="SingleCart-tr2">小計</th>
-            {/* <th>移除</th> */}
           </tr>
         </thead>
         <tbody>
@@ -55,39 +50,6 @@ function ListItemsWithHook({ tab, handleStep, couponAmount0 }) {
                 </td>
                 <td>{v.book_name} </td>
                 <td>$ {v.price}</td>
-                {/* 設定tab是購物車還是收藏 */}
-                {/* <td>
-                  <button
-                    type="button"
-                    className="btn btn-light"
-                    onClick={() => {
-                      removeItem(v.id)
-                    }}
-                  >
-                    移除
-                  </button>
-                  {tab === 'cart' ? (
-                    <button
-                      type="button"
-                      className="btn btn-light"
-                      onClick={() => {
-                        removeItem(v.id)
-                      }}
-                    >
-                      移入收藏
-                    </button>
-                  ) : (
-                    <button
-                      type="button"
-                      className="btn btn-light"
-                      onClick={() => {
-                        removeItem(v.id)
-                      }}
-                    >
-                      移入購物車
-                    </button>
-                  )}
-                </td> */}
               </tr>
             )
           })}
@@ -119,14 +81,7 @@ function ListItemsWithHook({ tab, handleStep, couponAmount0 }) {
             <span className="ListItemsWithHook-text-em-color">
               $ {cart.cartTotal}
             </span>
-            {/* /// 9/29優惠券*/}
-            {/* <div className="d-flex">優惠金額: -{couponAmount}</div>
-            <div className="d-flex justify-content-end ListItemsWithHook-text-em-color">
-              優惠後金額：$ {cart.cartTotal - couponAmount}
-            </div> */}
-            {/* /// */}
             <br />
-            
             {cart.isEmpty && '購物車為空'}
           </div>
         </div>

@@ -24,13 +24,11 @@ function ShoppingCart() {
   return (
     <SecondCartProvider localStorageKey="secondCart">
       <CartProvider>
-        {/* <MainContent> */}
         <ScrollToTop>
           <div className="container-xxl d-flex-column justify-context-center">
             <Outlet />
           </div>
         </ScrollToTop>
-        {/* </MainContent> */}
       </CartProvider>
     </SecondCartProvider>
   )

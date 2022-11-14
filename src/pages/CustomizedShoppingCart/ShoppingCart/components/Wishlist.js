@@ -4,7 +4,6 @@ import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
 
 function Wishlist() {
-  // 使用hooks 解出所需的狀態與函式(自context)
   const { cart, items, plusOne, minusOne, removeItem } = useCart()
 
   return (
@@ -30,8 +29,6 @@ function Wishlist() {
               <th></th>
               <th>收藏商品</th>
               <th>小計</th>
-              {/* <th>數量</th> */}
-              {/* <th>小計</th> */}
               <th></th>
             </tr>
           </thead>
@@ -39,13 +36,9 @@ function Wishlist() {
             {items.map((v, i) => {
               return (
                 <tr key={v.id}>
-                  {/* <td>{v.id}</td> */}
                   <img className="cart-img" src={v.picture} />
                   <td>{v.name} </td>
                   <td>${v.price}</td>
-                  {/* <td>
-                  
-                  {/* <td>${v.itemTotal}</td> */}
                   <td>
                     <button
                       type="button"
@@ -81,7 +74,5 @@ function Wishlist() {
     </>
   )
 }
-
-// export default ListItemsWithHook
 
 export default Wishlist
